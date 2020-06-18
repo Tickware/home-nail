@@ -1,7 +1,8 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 /* @import url('https://fonts.googleapis.com/css?family=Righteous'); */
-
+/* 
+Teste de commit */
 .interface {
 	background-color: rgb(255, 255, 255);
 	margin: auto;
@@ -23,8 +24,6 @@ span {
 	vertical-align: top;
 	color: #ffffff;
 	margin: 0px;
-
-	 
 }
 
 .header {  

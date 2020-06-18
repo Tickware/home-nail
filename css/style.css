@@ -9,7 +9,8 @@ Teste de commit */
     text-align: center;
 	width: 75%;
 }
-/* cara de bolacha */
+/* Belezura */
+
 .logo {
 	margin-top: 3%;
 	margin-bottom: 3%;
@@ -25,7 +26,7 @@ span {
 	margin: 0px;
 }
 
-.header {
+.header {  
 	display: block;
 	border-bottom: 1px #ffffff solid;
 	background-color: rgb(149,104,239);

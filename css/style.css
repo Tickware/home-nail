@@ -1,10 +1,10 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css?family=Oswald');
+/* @import url('https://fonts.googleapis.com/css?family=Righteous'); */
 
 .interface {
 	background-color: rgb(255, 255, 255);
 	margin: auto;
-	padding-bottom: 2%;
     text-align: center;
 	width: 75%;
 }
@@ -13,6 +13,15 @@
 	margin-top: 3%;
 	margin-bottom: 3%;
 	width: 100%;
+}
+
+span {
+	font-family: Righteous;
+	font-size: 30pt;
+	text-align: center;
+	vertical-align: top;
+	color: #ffffff;
+	margin: 0px;
 }
 
 .header {
@@ -67,22 +76,286 @@
 	color: #ffffff;
 }
 
-.footer {
+#body h1 {
+	font-family: Oswald;
+	color: white;
+	font-size: 50pt;
+	text-align: center;
+	margin: -12% 0% 2% 0%;
+	text-decoration: underline;
+}
+
+#body {
+	display: block;
+	margin: 0% 0% 0% 0%;
+	margin-bottom: 0px;
+	padding-top: 10%;
+	padding-left: 1%;
 	background-color: rgb(149,104,239);
-	border-top: 1px solid #ffffff;
+}
+
+#body p {
+	font-family: Oswald;
+	color: white;
+	font-size: 20pt;
+	text-align: justify;
+	margin: auto;
+	padding-left: 10%;
+	padding-right: 12%;
+}
+
+#body ul#trabalhos p {
+	font-family: Oswald;
+	color: white;
+	font-size: 20pt;
+	text-align: justify;
+	margin: auto;
+	padding-left: 18%;
+	padding-right: 12%;
+}
+
+#body a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+#body a:hover {
+	text-decoration: underline;
+}
+
+#body p#tick {
+	font-family: Righteous;
+	font-size: 100pt;
+	text-align: center;
+	text-decoration: underline;
+	padding-bottom: 5%;
+}
+
+#body h2 {
+	word-wrap: break-word;
+	font-family: Righteous;
+	font-size: 30pt;
+	text-align: center;
+	text-decoration: underline;
+	color: #ffffff;
+	margin-bottom: -50px;
+	text-decoration: none;
+}
+
+ul#founders {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
+	padding: 77px 17.3% 40px 17.3%;
+}
+
+ul#founders li {
+	float: left;
+	width: 200px;
+	height: 200px;
+	margin: 10px;
+	border: 5px solid #ffffff;
+	background-color: #ffffff;
+	box-shadow: 1px 1px 3px rgba(0,0,0,.4);
+	-webkit-transition: all .3s ease-in;
+}
+
+ul#founders li span {
+	font-family: 'Oswald';
+	color: #ffffff;
+	font-size: 15pt;
+	text-shadow: -1.5px 0 #000000, 0 1.5px #000000, 1.5px 0 #000000, 0 -1.5px #000000;
+	padding-left: -100px;
+	margin-left: -70px;
+}
+
+ul#founders li#flavio span, ul#founders li#vitor span {
+	font-family: 'Oswald';
+	color: #ffffff;
+	font-size: 15pt;
+	text-shadow: -1.5px 0 #000000, 0 1.5px #000000, 1.5px 0 #000000, 0 -1.5px #000000;
+	padding-left: -100px;
+	margin-left: -90px;
+}
+
+ul#founders li#felipe {
+	background: url('../pics/felipe.jpg') no-repeat;
+	background-position: 50% 60%;
+	background-size: 400px 400px;
+	background-color: #ffffff;
+}
+
+ul#founders li#flavio {
+	background: url('../pics/flavio.jpg') no-repeat;
+	background-position: 50% 60%;
+	background-size: 400px 400px;
+	background-color: #ffffff;
+}
+
+ul#founders li#itamar {
+	background: url('../pics/itamar.jpg') no-repeat;
+	background-position: 40% 50%;
+	background-size: 400px 400px;
+	background-color: #ffffff;
+}
+
+ul#founders li#vitor {
+	background: url('../pics/vitor.jpg') no-repeat;
+	background-position: 70% 50%;
+	background-size: 400px 400px;
+	background-color: #ffffff;
+}
+
+ul#founders li#felipe:hover, ul#founders li#flavio:hover  {
+	background-position: 0% 0%;
+	background-size: 200px 200px;
+}
+
+ul#founders li#itamar:hover, ul#founders li#vitor:hover {
+	background-position: 0% 0%;
+	background-size: 200px 200px;
+}
+
+/*--------------------------------------------------------------------------------------*/
+section#body div {
+	margin: auto;
+}
+
+ul#trabalhos {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;	
+	overflow: hidden;
+	padding: 2% 17% 20% 17%;
+}
+
+ul#trabalhos li {
+	width: 300px;
+	height: 300px;
+	margin-top: 10px;
+	border: 5px solid #ffffff;
+	background-color: #ffffff;
+	box-shadow: 2px 2px 6px rgba(0,0,0,.9);
+	-webkit-transition: all .3s ease-in;
+}
+
+ul#trabalhos li#veIA:hover {
+	background-position: 0% 0%;
+	background-size: 300px 300px;
+}
+
+ul#trabalhos li#veIA span {
+	font-family: 'Oswald';
+	color: #ffffff;
+	font-size: 15pt;
+	text-shadow: -1.5px 0 #000000, 0 1.5px #000000, 1.5px 0 #000000, 0 -1.5px #000000;
+	margin-left: 10px;
+}
+
+ul#trabalhos li#veIA {
+	background: url('../images/trabalhos/veIA.png') no-repeat;
+	background-position: 10% 10%;
+	background-size: 1000px 1000px;
+	background-color: #ffffff;
+}
+
+ul#trabalhos li#homenail:hover {
+	background-position: 50% 50%;
+	background-size: 300px 55.6px;
+}
+
+ul#trabalhos li#homenail span {
+	font-family: 'Oswald';
+	color: #ffffff;
+	font-size: 15pt;
+	text-shadow: -1.5px 0 #000000, 0 1.5px #000000, 1.5px 0 #000000, 0 -1.5px #000000;
+	margin-left: 10px;
+}
+
+ul#trabalhos li#homenail {
+	background: url('../images/trabalhos/logo.png') no-repeat;
+	background-position: 59% 50%;
+	background-size: 1699px 315px;
+	background-color: #ffffff;
+}
+/*--------------------------------------------------------------------------------------*/
+ul#members {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	padding-top: 77px;
+	overflow: hidden;
+	padding-left: 22%;
+	padding-right: 22%;
+	padding-bottom: 100px;
+}
+
+ul#members li {
+	float: left;
+	width: 200px;
+	height: 200px;
+	margin: 10px;
+	border: 5px solid #ffffff;
+	background-color: #ffffff;
+	box-shadow: 1px 1px 3px rgba(0,0,0,.4);
+	-webkit-transition: all .3s ease-in;
+}
+
+ul#members li span {
+	font-family: 'Oswald';
+	color: #ffffff;
+	font-size: 15pt;
+	text-shadow: -1.5px 0 #000000, 0 1.5px #000000, 1.5px 0 #000000, 0 -1.5px #000000;
+	padding-left: 10px;
+}
+
+ul#members li#alice {
+	background: url('../pics/alice.jpg') no-repeat;
+	background-position: 20% 60%;
+	background-size: 400px 400px;
+	background-color: #ffffff;
+}
+
+ul#members li#luis {
+	background: url('../pics/luis.jpg') no-repeat;
+	background-position: 40% 60%;
+	background-size: 400px 400px;
+	background-color: #ffffff;
+}
+
+ul#members li#marcos {
+	background: url('../pics/marcos.jpg') no-repeat;
+	background-position: 50% 45%;
+	background-size: 400px 400px;
+	background-color: #ffffff;
+}
+
+ul#members li#alice:hover, ul#members li#luis:hover, ul#members li#marcos:hover {
+	background-position: 0% 0%;
+	background-size: 200px 200px;
+}
+
+ul#members li:hover, ul#founders li:hover {
+	-webkit-transform: scale(1.5);
+}
+
+.footer {
 	display: block;
 	padding: 4% 0 4% 0;
-	margin: auto;
-	text-align: center;
+	border-top: 1px solid #ffffff;
+	background-color: rgb(149,104,239);
+	margin-bottom: 8%;
 }
 
 .footer p {
-	color: #ffffff;
+	/* margin-top: 2.5%; */
+	text-align: center;
 	font-family: 'Oswald';
+	color: #ffffff;
 	font-size: 20pt;
-	margin: 0;
 }
 
 .footer a {
-	color: #ffffff;
+	color: white;
 }

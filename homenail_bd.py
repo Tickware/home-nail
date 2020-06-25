@@ -13,17 +13,30 @@ try:
     print('\n*** Banco conectado! Somente pessoal autorizado! ***\n')
 
     def login(cpf, senha):
-        sql = f"SELECT * FROM t_clientes WHERE cpf = '{cpf}'"
+        sql = f"SELECT * FROM t_clientes WHERE cpf = '{cpf}' AND senha = '{senha}'"
+
+        print(cpf)
 
         cur = con.cursor()
         cur.execute(sql)
-        usuario = cur.fetchall()
+        usuario = cur.fetchone()
 
-        for parametros in usuario:
-            if parametros[2] == '{cpf}' and parametros[3] == '{senha}':
-                return True
-            else:
-                return False
+        # for parametros in usuario:
+        #     if parametros[2] == '{cpf}' and parametros[3] == '{senha}':
+        #         return True
+        #     else:
+        #         return False
+
+        if usuario:
+            return True
+        else:
+            return False
+
+
+
+
+
+
 
     # def cadastraCliente():
     #     os.system('cls')

@@ -3,12 +3,13 @@
 
 <head>
 	<meta charset="utf-8" />
+	<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="css/reset.css">
+
 	<title>Home Nail - Login</title>
+	<link rel="stylesheet" href="css/index.css">
 
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/index.css">
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -18,28 +19,30 @@
 		<header class="header">
 			<h1>Bem-vindo ao Home Nail</h1>
 		</header>
-		<!-- <header class="header">
-			<nav class="menu">
-				<ul>
-					<li><a href="agendamentos.html">Agendamentos</a></li>
-					<li><a href="cadastro.html">Cadastro</a></li>
-					<li><a href="sobre.html">Sobre</a></li>
-				</ul>
-			</nav>
-		</header> -->
 
-		<section id="login">
+		<section>
 			<div id='form'>
-				<h2>Faça seu Login</h2>
+				<form>
+					<h2>Faça seu Login</h2>
 
-				<p>CPF: <input type="text" id="cpf" maxlength="14"></p>
-				<p>Senha: <input type="password" id="senha" minlength="6"></p>
+					<div>
+						<p>CPF: <input name="cpf" type="text" maxlength="14"></p>
+						<p>Senha: <input name="senha" type="password" minlength="6"></p>
+					</div>
 
-				<form action="agendamentos.html">
-					<input type="submit" value="Entrar" id="entrar">
+					<input type="submit" value="Entrar" class="botao">
 				</form>
 
-				<p id="p1">Não possui cadastro? <a href="cadastrar.html">Cadastre-se</a></p>
+				<p id="p1">Não possui cadastro? Cadastre-se</p>
+
+				<form action="/cadastrar_cliente">
+					<input type="submit" value="Sou Cliente" class="botao">
+				</form>
+
+				<form action="/cadastrar_fornec">
+					<input type="submit" value="Sou Manicure" class="botao">
+				</form>
+
 			</div>
 
 		</section>

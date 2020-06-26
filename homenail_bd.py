@@ -33,31 +33,37 @@ try:
             return False
 
 
+    def cliente(nome, cpf, senha, telefone, cep, rua, numero, cidade, estado):
 
+        print('teste cliente')
 
+        sql = f"INSERT INTO t_clientes (nome, cpf, senha, telefone, cep, rua, numero, cidade, estado) values('{nome}', '{cpf}', '{senha}', '{telefone}', '{cep}', '{rua}', '{numero}', '{cidade}', '{estado}') RETURNING id"
 
+        print(nome, cpf, senha, telefone, cep, rua, numero, cidade, estado)
 
+        cur = con.cursor()
+        cur.execute(sql)
+        id = cur.fetchone()[0]
+        con.commit()
 
-    # def cadastraCliente():
-    #     os.system('cls')
+        print(id)
     
-    #     nome = input('Informe o nome: ')
-    #     cpf = input('CPF: ')
-    #     senha = input('Senha: ')
-    #     telefone = input('Telefone: ')
-    #     cep = input('CEP: ')
-    #     rua = input('Logradouro: ')
-    #     numero = input('Número: ')
-    #     cidade = input('Cidade: ')
-    #     estado = input('Estado: ')        
+        if id:
+            return True
+        else:
+            return False
 
-    #     sql = f"INSERT INTO t_clientes (nome, cpf, senha, telefone, cep, rua, numero, cidade, estado) values('{nome}', '{cpf}', '{senha}', '{telefone}', '{cep}', '{rua}', '{numero}', '{cidade}', '{estado}')"
 
-    #     cur = con.cursor()
-    #     cur.execute(sql)
-    #     con.commit()
+    def cadastrarFornecedor(nome, cpf, senha, telefone, cidade, estado):
+        sql = f"INSERT INTO t_fornecs (nome, cpf, senha, telefone, cidade, estado) values('{nome}', '{cpf}', '{senha}', '{telefone}', '{cidade}', '{estado}')"
 
-    #     print('Ae! Cliente inserido na base!\n')    
+        print(nome, cpf, senha, telefone, cidade, estado)
+
+        cur = con.cursor()
+        cur.execute(sql)
+
+
+  
 
 except Exception as erro:
     print(erro)

@@ -22,29 +22,29 @@
 
 		<section>
 			<div id='form'>
-				<form action="agendamentos.html">
+				<form method="GET">
 
 					<h2>Faça Seu Cadastro</h2>
 
 					<div>
-						<p>Nome: <input id="nome" type="text" minlength="3" maxlength="100"></p>
-						<p>CPF: <input id="cpf" type="text" minlength="14" maxlength="14" placeholder="xxx.xxx.xxx-xx">
+						<p>Nome: <input id="nome" type="text" minlength="3" maxlength="100" name="nome"></p>
+						<p>CPF: <input id="cpf" type="text" minlength="14" maxlength="14" placeholder="xxx.xxx.xxx-xx" name="cpf">
 						</p>
-						<p>Telefone: <input id="fone" type="text" maxlength="15" placeholder="(xx) xxxxx-xxxx"></p>
+						<p>Telefone: <input id="fone" type="text" maxlength="15" placeholder="(xx) xxxxx-xxxx" name= "telefone"></p>
 
 						<p>Crie sua Senha: <input id="senha" type="password" minlength="6" maxlength="50"
-								placeholder="Mínimo 6 caracteres"></p>
-						<p>Confirme a Senha: <input id="confSenha" type="password" minlength="6" maxlength="50"></p>
+								placeholder="Mínimo 6 caracteres" name="senha"></p>
+						<p>Confirme a Senha: <input id="confSenha" type="password" minlength="6" maxlength="50" name="confirmaSenha"></p>
 
-						<p>Rua: <input id="rua" type="text" minlength="1" maxlength="50"></p>
+						<p>Rua: <input id="rua" type="text" minlength="1" maxlength="50" name="rua"></p>
 
-						<p>Nº: <input id="numero" type="number" minlength="1" maxlength="6">
-							CEP: <input id="cep" type="text" minlength="9" maxlength="9" placeholder="xxxxx-xxx"></p>
+						<p>Nº: <input id="numero" type="number" minlength="1" maxlength="6" name="numero">
+							CEP: <input id="cep" type="text" minlength="9" maxlength="9" placeholder="xxxxx-xxx" name="cep"></p>
 
-						<p>Cidade: <input id="cidade" type="text" minlength="1" maxlength="50">
+						<p>Cidade: <input id="cidade" type="text" minlength="1" maxlength="50" name="cidade">
 
 							UF:
-							<select name="estado" id="estado">
+							<select name="estado" id="estado" name="estado">
 								<option value="">--</option>
 								<option value="ES">ES</option>
 								<option value="MG">MG</option>

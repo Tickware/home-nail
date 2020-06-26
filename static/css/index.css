@@ -1,10 +1,15 @@
 @charset "UTF-8";
 
-#login {
+section {
     background-color: rgb(149,104,239);
     color: white;
     padding-top: 5%;
-    padding-bottom: 5%;
+	padding-bottom: 5%;
+}
+
+div {
+	text-align: right;
+	margin-right: 10em;
 }
 
 .header h1 {
@@ -16,14 +21,13 @@
 
 #form {
 	border-radius: 20px;
-	border: 2px white;
+	border: 2px #ffffff;
 	border-style: solid;
-	margin: auto;
-	/* margin-bottom: 3%; */
-	/* margin-top: 3%; */
-	width: 40%;
 	font-family: 'Oswald';
+	margin: auto;
 	padding: 2%;
+	text-align: center;
+	width: 35em;
 }
 
 #form h2 {
@@ -38,18 +42,10 @@
 	margin-bottom: 2%;
 }
 
-#cpf {
-	margin-left: 4.5%;
-}
-
 #form #p1 {
 	font-size: 14pt;
-	margin-top: 1%;
-}
-
-#form a {
-	color: white;
-	font-style: italic;
+	margin-bottom: 0;
+	margin-top: 2%;
 }
 
 #form input {
@@ -61,7 +57,7 @@
 	width: 180px;
 }
 
-#form #entrar {
+#form .botao {
 	font-family: 'Oswald';
 	font-size: 20pt;
 	font-weight: normal;

@@ -6,17 +6,19 @@ import homenail_bd
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def index():
+
     cpf = request.args.get('cpf')
     senha = request.args.get('senha')
-    print(cpf)
     retorno = homenail_bd.login(cpf, senha)
-    print (retorno)
+
     if retorno:
         return render_template('agendamento.html', cpf = cpf, senha = senha)
-    print('index')
+
     return render_template('index.html', cpf = cpf, senha = senha)
+
 
 @app.route('/agendamento/')
 def agendamento():
@@ -25,6 +27,7 @@ def agendamento():
     # nome = homenail_bd.login(cpf, senha)
     # print(nome)
     return render_template('agendamento.html')
+
 
 @app.route('/cadastrar_cliente/')
 def cadastrar_cliente():
@@ -76,3 +79,4 @@ def cadastrar_cliente():
 
 if __name__ == '__main__':
     app.run(debug=True) 
+    

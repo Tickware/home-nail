@@ -3,18 +3,19 @@
 
 <head>
 	<meta charset="utf-8" />
-	<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
-	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/cadastrar.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+	<link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
 
 	<title>Home Nail - Cadastro de Cliente</title>
-	<link rel="stylesheet" href="css/cadastrar_cliente.css" />
 
-	<link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
 	<div class="interface">
-		<img class="logo" src="./img/logo.png">
+		<img class="logo" src="{{ url_for('static', filename='img/logo.png') }}">
 
 		<header class="header">
 			<h1>Bem-vindo ao Home Nail</h1>

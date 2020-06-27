@@ -52,29 +52,6 @@ def cadastrar_cliente():
         
     return render_template('cadastrar_cliente.html')
 
-# @app.route('/')
-# def efetivaCliente():
-
-#     print('Outra coisa')
-
-#     nome = request.args.get('nome')
-#     cpf = request.args.get('cpf')
-#     senha = request.args.get('senha')
-#     telefone = request.args.get('telefone')
-#     cep = request.args.get('cep')
-#     rua = request.args.get('rua')
-#     numero = request.args.get('numero')
-#     cidade = request.args.get('cidade')
-#     estado = request.args.get('estado')
-
-#     print(nome)
-
-#     cliente = homenail_bd.cadastrar_cliente(nome, cpf, senha, telefone, cep, rua, numero, cidade, estado)
-#     print(cliente)
-
-#     if cliente:
-#         print('Cliente Cadastrado')
-#     return render_template('index.html')
    
 
 if __name__ == '__main__':

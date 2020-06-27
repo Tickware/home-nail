@@ -3,14 +3,10 @@
 
 <head>
 	<meta charset="utf-8" />
-	<!-- <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
 	
-	<link rel="stylesheet" href="css/cadastrar_cliente.css" />
-	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="css/reset.css" /> -->
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/cadastrar.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
 	<link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
 	
@@ -19,9 +15,7 @@
 
 <body>
 	<div class="interface">
-		<!-- <img class="logo" src="./img/logo.png"> -->
 		<img class="logo" src="{{ url_for('static', filename='img/logo.png') }}">
-
 
 		<header class="header">
 			<h1>Bem-vindo ao Home Nail</h1>
@@ -34,24 +28,25 @@
 					<h2>Faça Seu Cadastro</h2>
 
 					<div>
-						<p>Nome: <input id="nome" type="text" minlength="3" maxlength="100" name="nome"></p>
-						<p>CPF: <input id="cpf" type="text" minlength="14" maxlength="14" placeholder="xxx.xxx.xxx-xx" name="cpf">
+						<p>Nome: <input name="nome" type="text" minlength="3" maxlength="100"></p>
+						<p>CPF: <input name="cpf" type="number"maxlength="11" placeholder="Somente números">
 						</p>
-						<p>Telefone: <input id="fone" type="text" maxlength="15" placeholder="(xx) xxxxx-xxxx" name= "telefone"></p>
+						<p>Telefone: <input name="fone" type="number" maxlength="11" placeholder="DDD + fone"></p>
 
-						<p>Crie sua Senha: <input id="senha" type="password" minlength="6" maxlength="50"
-								placeholder="Mínimo 6 caracteres" name="senha"></p>
-						<p>Confirme a Senha: <input id="confSenha" type="password" minlength="6" maxlength="50" name="confirmaSenha"></p>
+						<p>Crie sua Senha: <input name="senha" type="password" minlength="6" maxlength="50"
+								placeholder="Mínimo 6 caracteres"></p>
+						<p>Confirme a Senha: <input name="confSenha" type="password" minlength="6" maxlength="50"
+							placeholder="Repita a senha"></p>
 
-						<p>Rua: <input id="rua" type="text" minlength="1" maxlength="50" name="rua"></p>
+						<p>Rua: <input name="rua" type="text" maxlength="50"></p>
 
-						<p>Nº: <input id="numero" type="number" minlength="1" maxlength="6" name="numero">
-							CEP: <input id="cep" type="text" minlength="9" maxlength="9" placeholder="xxxxx-xxx" name="cep"></p>
+						<p>Nº: <input name="numero" id="numero" type="number" maxlength="6">
+							CEP: <input name="cep" id="cep" type="text" maxlength="9" placeholder="Somente nº"></p>
 
-						<p>Cidade: <input id="cidade" type="text" minlength="1" maxlength="50" name="cidade">
+						<p>Cidade: <input name="cidade" id="cidade" type="text" maxlength="50">
 
 							UF:
-							<select name="estado" id="estado" name="estado">
+							<select name="estado">
 								<option value="">--</option>
 								<option value="ES">ES</option>
 								<option value="MG">MG</option>

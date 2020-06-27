@@ -73,3 +73,8 @@ p {
     margin-top: 4%;
 	width: 180px;
 }
+
+#atual {
+	background-color: rgb(149,104,239);
+	color: #ffffff;
+}

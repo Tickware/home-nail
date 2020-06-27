@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="utf-8" />
+	<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/cadastrar.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+	<link rel="stylesheet" href="../static/css/reset.css">
+	<link rel="stylesheet" href="../static/css/cadastrar.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+
+	<link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+
+	<title>Home Nail - Meu Cadastro</title>
+
+</head>
+
+<body>
+	<div class="interface">
+		<!-- <img class="logo" src="{{ url_for('static', filename='img/logo.png') }}"> -->
+		<img class="logo" href="../static/img/logo.png">
+
+		<header class="header">
+			<nav class="menu">
+				<ul>
+					<li><a action="consulta_agendamentos.html">Meus Agendamentos</a></li>
+					<li><a id="atual" action="editar_cadastro.html">Meu Cadastro</a></li>
+					<li><a action="sobre.html">Sobre</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<section>
+			<div id='form'>
+				<form action="agendamentos.html">
+
+					<h2>Atualize Seu Cadastro</h2>
+
+					<div>
+						<p>Nome: <input name="nome" type="text" minlength="3" maxlength="100"></p>
+						<p>CPF: <input name="cpf" type="number" maxlength="11" placeholder="Somente números">
+						</p>
+						<p>Telefone: <input name="fone" type="number" maxlength="15" placeholder="DDD + fone"></p>
+
+						<p>Crie sua Senha: <input name="senha" type="password" minlength="6" maxlength="50"
+								placeholder="Mínimo 6 caracteres"></p>
+						<p>Confirme a Senha: <input name="confSenha" type="password" minlength="6" maxlength="50"
+								placeholder="Repita a senha"></p>
+
+						<p>Rua: <input name="rua" type="text" maxlength="50"></p>
+
+						<p>Nº: <input name="numero" id="numero" type="number" maxlength="6">
+							CEP: <input name="cep" id="cep" type="number" maxlength="9" placeholder="Somente nºs"></p>
+
+						<p>Cidade: <input name="cidade" id="cidade" type="text" maxlength="50">
+
+							UF:
+							<select name="estado" name="estado">
+								<option value="">--</option>
+								<option value="ES">ES</option>
+								<option value="MG">MG</option>
+								<option value="RJ">RJ</option>
+								<option value="SP">SP</option>
+							</select>
+						</p>
+					</div>
+
+					<input type="submit" value="Atualizar" id="cadastrar">
+				</form>
+			</div>
+		</section>
+
+		<footer class="footer">
+			<p>Home Nail&trade; é um app feito por <a href="https://tickware.com.br/"> Tickware, Inc.</a></p>
+		</footer>
+
+	</div>
+</body>
+
+</html>

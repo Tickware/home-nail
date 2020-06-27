@@ -10,9 +10,13 @@ app = Flask(__name__)
 @app.route('/')
 def index():
 
+    retorno = ''
+
     cpf = request.args.get('cpf')
     senha = request.args.get('senha')
-    retorno = homenail_bd.login(cpf, senha)
+
+    if cpf and senha:
+        retorno = homenail_bd.login(cpf, senha)
 
     if retorno:
         return render_template('agendamento.html', cpf = cpf, senha = senha)

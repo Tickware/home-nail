@@ -29,19 +29,20 @@
 					<h2>Faça Seu Cadastro</h2>
 
 					<div>
-						<p>Nome: <input id="nome" type="text" maxlength="100"></p>
-						<p>CPF: <input id="cpf" type="text" maxlength="14" placeholder="xxx.xxx.xxx-xx">
+						<p>Nome: <input name="nome" type="text" maxlength="100"></p>
+						<p>CPF: <input name="cpf" type="number" maxlength="11" placeholder="Somente números">
 						</p>
-						<p>Telefone: <input id="fone" type="text" maxlength="15" placeholder="(xx) xxxxx-xxxx"></p>
+						<p>Telefone: <input name="fone" type="number" maxlength="11" placeholder="DDD + fone"></p>
 
-						<p>Crie sua Senha: <input id="senha" type="password" minlength="6" maxlength="50"
+						<p>Crie sua Senha: <input name="senha" type="password" minlength="6" maxlength="50"
 								placeholder="Mínimo 6 caracteres"></p>
-						<p>Confirme a Senha: <input id="confSenha" type="password" minlength="6" maxlength="50"></p>
+						<p>Confirme a Senha: <input name="confSenha" type="password" minlength="6" maxlength="50"
+								placeholder="Repita a senha"></p>
 
-						<p>Cidade: <input id="cidade" type="text" maxlength="50">
+						<p>Cidade: <input name="cidade" id="cidade" type="text" maxlength="50">
 
 							UF:
-							<select name="estado" id="estado">
+							<select name="estado">
 								<option value="">--</option>
 								<option value="ES">ES</option>
 								<option value="MG">MG</option>

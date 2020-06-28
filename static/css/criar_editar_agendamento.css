@@ -1,0 +1,73 @@
+section {
+    background-color: rgb(149,104,239);
+    color: #ffffff;
+	font-family: 'Oswald';
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+#form {
+	border-radius: 20px;
+	border: 2px #ffffff;
+	border-style: solid;
+	font-family: 'Oswald';
+	margin: auto;
+	padding: 2%;
+	text-align: center;
+	width: 35em;
+}
+
+h2 {
+	font-size: 30pt;
+	font-weight: normal;
+	margin-bottom: 8%;
+	text-decoration: underline overline;
+}
+
+div {
+	text-align: right;
+	margin-right: 15%;
+}
+
+input {
+    border-radius: 5px;
+	font-family: 'Times';
+	font-size: 20pt;
+	font-weight: normal;
+	width: 190px;
+}
+
+#pe, #mao {
+	height: 25px;
+	width: 25px;
+	margin-right: 5px;
+}
+
+label {
+	margin-right: 7%;
+}
+
+select {
+	color: #000000;
+	font: normal 16pt 'Oswald';
+	border-radius: 4px;
+	width: 198px;
+}
+
+p {
+	font-size: 20pt;
+	margin-bottom: 2%;
+}
+
+#agendar {
+	font-family: 'Oswald';
+	height: 5%;
+    margin-bottom: 2%;
+    margin-top: 4%;
+	width: 180px;
+}
+
+#atual {
+	background-color: rgb(149,104,239);
+	color: #ffffff;
+}

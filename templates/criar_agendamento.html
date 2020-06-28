@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/criar_editar_agendamento.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+	<link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+
+	<title>Home Nail - Agendar Horário</title>
+
+</head>
+
+<body>
+	<div class="interface">
+		<img class="logo" src="{{ url_for('static', filename='img/logo.png') }}">
+
+		<header class="header">
+			<nav class="menu">
+				<ul>
+					<li><a action="consulta_agendamentos_cliente.html" id="atual">Meus Agendamentos</a></li>
+					<li><a action="editar_cadastro_cliente.html">Meu Cadastro</a></li>
+					<li><a action="sobre.html">Sobre</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<section>
+			<div id='form'>
+				<form method="GET">
+
+					<h2>Agende um Horário</h2>
+
+					<div>
+						<p>Data: <input name="data" type="date"></p>
+						<p>Horário: <input name="hora" type="time"></p>
+
+						<p>Tipo de Serviço:
+							<input type="checkbox" name="tp_serviço" id="pe" value="P"><label for="pe">Pé</label>
+							<input type="checkbox" name="tp_serviço" id="mao" value="M"><label for="mao">Mão</label>
+						</p>
+
+						<p>Tipo de Serviço:
+							<select name="tp_serviço">
+								<option value="">Pé</option>
+								<option value="">Mão</option>
+								<option value="">Pé e Mão</option>
+							</select>
+						</p>
+
+						<p>Manicure: <input name="id_fornec" type="text" maxlength="50"></p>
+					</div>
+
+					<input type="submit" value="Agendar" id="agendar">
+				</form>
+			</div>
+		</section>
+
+		<footer class="footer">
+			<p>Home Nail&trade; é um app feito por <a href="https://tickware.com.br/"> Tickware, Inc.</a></p>
+		</footer>
+
+	</div>
+</body>
+
+</html>

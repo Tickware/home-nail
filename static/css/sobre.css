@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+section {
+    background-color: rgb(149,104,239);
+    color: white;
+    padding-top: 5%;
+	padding-bottom: 5%;
+}
+
+span {
+	font-style: italic;
+}
+
+#sobre {
+	border-radius: 20px;
+	border: 2px #ffffff;
+	border-style: solid;
+	font-family: 'Oswald';
+	margin: auto;
+	padding: 2%;
+	text-align: center;
+	width: 35em;
+}
+
+#sobre h2 {
+	font-size: 30pt;
+	font-weight: normal;
+	margin-bottom: 8%;
+}
+
+#sobre p {
+	font-size: 20pt;
+	font-weight: normal;
+	margin-bottom: 2%;
+	text-align: justify;
+}
+
+#atual {
+	background-color: rgb(149,104,239);
+	color: #ffffff;
+}

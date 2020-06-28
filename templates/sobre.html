@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="utf-8" />
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/sobre.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+	<link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+
+	<title>Home Nail - Sobre</title>
+</head>
+
+<body>
+	<div class="interface">
+		<img class="logo" src="{{ url_for('static', filename='img/logo.png') }}">
+
+		<header class="header">
+			<nav class="menu">
+				<ul>
+					<li><a action="consulta_agendamentos.html">Meus Agendamentos</a></li>
+					<li><a action="editar_cadastro_cliente.html">Meu Cadastro</a></li>
+					<li><a id="atual" action="sobre.html">Sobre</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<section>
+			<div id="sobre">
+				<h2>Sobre o Home Nail</h2>
+
+				<p>
+					&nbsp;&nbsp;&nbsp;&nbsp;A vida das mulheres anda cada vez mais corrida e quase nunca sobra tempo
+					para ir ao salão fazer as
+					unhas.
+				</p>
+
+				<p>
+					&nbsp;&nbsp;&nbsp;&nbsp;Pensando nisso, Alice Sakamoto (futura esposa do Vitor) pensou em um
+					aplicativo que funciona como um
+					<span>“Delivery da Unha”</span>.
+					Você chama uma manicure pelo aplicativo, e ela vai até você onde você estiver.
+				</p>
+
+				<p>
+					&nbsp;&nbsp;&nbsp;&nbsp;O desenvolvimento do app iniciou-se a partir do conhecimento adquirido na
+					disciplina Programação
+					para Dispositivos Móveis no curso de ADS na FATEC de Ribeirão Preto. Agora a ideia se torna
+					realidade sendo desenvolvido pela <span>Tickware</span>, empresa criada e administrada
+					por Alice, Flavio, Itamar e Vitor.
+				</p>
+
+				<img class="logo" src="{{ url_for('static', filename='img/logo_site.jpg') }}">
+			</div>
+
+		</section>
+
+		<footer class="footer">
+			<p>Home Nail&trade; é um app feito por <a href="https://tickware.com.br/"> Tickware, Inc.</a></p>
+		</footer>
+
+	</div>
+</body>
+
+</html>

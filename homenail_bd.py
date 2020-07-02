@@ -12,7 +12,8 @@ try:
     ###Conectar no banco
     print('\n*** Banco conectado! Somente pessoal autorizado! ***\n')
 
-    def login(cpf, senha):
+    def login_cliente(cpf, senha):
+        print('banco')
         sql = f"SELECT * FROM t_clientes WHERE cpf = '{cpf}' AND senha = '{senha}'"
 
         print(cpf)

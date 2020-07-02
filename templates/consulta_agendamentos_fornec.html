@@ -20,9 +20,9 @@
 		<header class="header">
 			<nav class="menu">
 				<ul>
-					<li><a action="consulta_agendamentos_fornec.html" id="atual">Meus Agendamentos</a></li>
-					<li><a action="editar_cadastro_fornec.html">Meu Cadastro</a></li>
-					<li><a action="sobre.html">Sobre</a></li>
+					<li><a href="{{ url_for('consulta_agendamentos_fornec') }}"  id="atual">Meus Agendamentos</a></li>
+					<li><a href="{{ url_for('editar_cadastro_fornec') }}" >Meu Cadastro</a></li>
+					<li><a href="{{ url_for('sobre') }}">Sobre</a></li>
 				</ul>
 			</nav>
 		</header>

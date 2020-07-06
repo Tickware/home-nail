@@ -5,7 +5,7 @@ from flask import Flask, render_template, url_for, request, redirect, url_for, s
 import homenail_bd
 
 app = Flask(__name__)
-app.secret_key = 'Fatec_Python'
+app.secret_key = 'Fatec_ython'
 
 
 @app.route('/')

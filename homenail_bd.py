@@ -1,4 +1,6 @@
 import psycopg2 as pg
+from models import Cliente, Fornecedor, Agendamento
+
 
 try:
     con = pg.connect(
@@ -13,10 +15,8 @@ try:
     print('\n*** Banco conectado! Somente pessoal autorizado! ***\n')
 
     def login_cliente(cpf, senha):
-        print('banco')
+        print('HomeNail_login_cliente')
         sql = f"SELECT * FROM t_clientes WHERE cpf = '{cpf}' AND senha = '{senha}'"
-
-        print(cpf)
 
         cur = con.cursor()
         cur.execute(sql)
@@ -28,10 +28,13 @@ try:
             return False
 
 
-    def cliente(nome, cpf, senha, telefone, cep, rua, numero, cidade, estado):
+    # def cadastrar_cliente(nome, cpf, senha, telefone, cep, rua, numero, cidade, estado): 
+    def cadastrar_cliente(cliente): 
+        print('HomeNail_Cadastro_Cliente')
 
-        sql = f"INSERT INTO t_clientes (nome, cpf, senha, telefone, cep, rua, numero, cidade, estado) values('{nome}', '{cpf}', '{senha}', '{telefone}', '{cep}', '{rua}', '{numero}', '{cidade}', '{estado}') RETURNING id"
+        sql = f"INSERT INTO t_clientes (nome, cpf, senha, telefone, cep, rua, numero, cidade, estado) values('{cliente.nome}', {cliente.cpf}, '{cliente.senha}', {cliente.telefone}, '{cliente.cep}', '{cliente.rua}', {cliente.numero}, '{cliente.cidade}', '{cliente.estado}') RETURNING id"
 
+        
         cur = con.cursor()
         cur.execute(sql)
         id = cur.fetchone()[0]
@@ -43,7 +46,8 @@ try:
             return False
 
 
-    def cadastrarFornecedor(nome, cpf, senha, telefone, cidade, estado):
+    def cadastrar_fornecedor(nome, cpf, senha, telefone, cidade, estado):
+        print(HomeNail_cadastrarFornecedor)
         sql = f"INSERT INTO t_fornecs (nome, cpf, senha, telefone, cidade, estado) values('{nome}', '{cpf}', '{senha}', '{telefone}', '{cidade}', '{estado}')"
 
         cur = con.cursor()

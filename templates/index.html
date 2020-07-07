@@ -22,11 +22,11 @@
 
 		<section>
 			<div id='form'>
-				<form method="GET">
+				<form action="/autenticar" method="POST">
 					<h2>Faça seu Login</h2>
 
 					<div>
-						<p>CPF: <input name="cpf" type="number" maxlength="11"></p>
+						<p>CPF: <input name="cpf" type="text" maxlength="14"></p>
 						<p>Senha: <input name="senha" type="password" minlength="6"></p>
 					</div>
 
@@ -35,7 +35,7 @@
 
 				<p id="p1">Não possui cadastro? Cadastre-se</p>
 
-				<form action="/cadastrar_cliente">
+				<form action="/cadastrar_cliente"  method="POST">
 					<input type="submit" value="Sou Cliente" class="botao">
 				</form>
 
@@ -55,3 +55,4 @@
 </body>
 
 </html>
+

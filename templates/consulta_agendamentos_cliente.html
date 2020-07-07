@@ -7,6 +7,10 @@
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/consulta_agendamentos.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
+	<link rel="stylesheet" href="../static/css/reset.css">
+	<link rel="stylesheet" href="../static/css/consulta_agendamentos.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+
 	<link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
 
 	<title>Home Nail - Meus Agendamentos</title>
@@ -22,8 +26,8 @@
 				<ul>
 					<li><a href="{{ url_for('consulta_agendamentos_cliente') }}" id="atual">Meus Agendamentos</a></li>
 					<li><a href="{{ url_for('editar_cadastro_cliente') }}">Meu Cadastro</a></li>
-					<li><a href="{{ url_for('logout') }}" >Sair</a></li>
 					<li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+					<li><a href="{{ url_for('logout') }}" >Sair</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -42,6 +46,8 @@
 				<p>TABELA DE AGENDAMENTOS VAI AKI</p>
 				<p>TABELA DE AGENDAMENTOS VAI AKI</p>
 				<p>TABELA DE AGENDAMENTOS VAI AKI</p>
+
+				<input type="submit" value="Criar Agendamento" class="botao">
 			</div>
 		</section>
 

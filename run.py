@@ -35,7 +35,7 @@ def cadastrar_cliente_banco():
                       estado=request.form['estado'])
 
     if cliente:
-        retorno = homenail_bd.cadastrar_cliente(cliente) 
+        homenail_bd.cadastrar_cliente(cliente) 
 
     return render_template('index.html')
     
@@ -90,7 +90,32 @@ def editar_cadastro_cliente():
 
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect(url_for('index'))
-    return render_template('editar_cadastro_cliente.html')
+    
+    cliente = homenail_bd.busca_dados_cliente(session['usuario_logado'])
+
+
+    return render_template('editar_cadastro_cliente.html', cliente=cliente)
+
+@app.route('/editar_cadastro_banco', methods=['POST',])
+def editar_cadastro_banco():
+    print('run - editar_cadastro_banco')
+
+    if 'usuario_logado' not in session or session['usuario_logado'] == None:
+        return redirect(url_for('index'))
+    
+    cliente = Cliente(nome=request.form['nome'],
+                      cpf=int(request.form['cpf']),
+                      senha=request.form['senha'],
+                      telefone=int(request.form['telefone']),
+                      cep=int(request.form['cep']),
+                      rua=request.form['rua'],
+                      numero=int(request.form['numero']),
+                      cidade=request.form['cidade'],
+                      estado=request.form['estado'])
+
+    homenail_bd.atualiza_cliente(cliente)
+    
+    return render_template('consulta_agendamentos_cliente.html')
 
 
 @app.route('/editar_cadastro_fornec')

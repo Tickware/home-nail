@@ -45,13 +45,34 @@ try:
         else:
             return False
 
+    def busca_dados_cliente(usuario_logado_cpf):
+        print('HomeNail_editar_cliente')
+
+        sql = f"SELECT * FROM t_clientes WHERE cpf = '{int(usuario_logado_cpf)}'"
+
+        cur = con.cursor()
+        cur.execute(sql)
+
+        cliente = cur.fetchone()
+
+        return cliente
+
+
+    def atualiza_cliente(cliente):
+        print('HomeNail_atualiza_cliente')
+
+        sql = f"UPDATE t_clientes SET nome = '{cliente.nome}', senha = '{cliente.senha}', telefone =  {cliente.telefone}, cep = '{cliente.cep}', rua =  '{cliente.rua}', numero =  {cliente.numero}, cidade = '{cliente.cidade}', estado =  '{cliente.estado}'  WHERE cpf = {cliente.cpf}"
+        cur = con.cursor()
+        cur.execute(sql)
+        con.commit()
 
     def cadastrar_fornecedor(nome, cpf, senha, telefone, cidade, estado):
-        print(HomeNail_cadastrarFornecedor)
+        print('HomeNail_cadastrarFornecedor')
         sql = f"INSERT INTO t_fornecs (nome, cpf, senha, telefone, cidade, estado) values('{nome}', '{cpf}', '{senha}', '{telefone}', '{cidade}', '{estado}')"
 
         cur = con.cursor()
         cur.execute(sql)
+        con.commit()
 
 
 except Exception as erro:

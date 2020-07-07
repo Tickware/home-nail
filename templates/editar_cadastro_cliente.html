@@ -30,31 +30,31 @@
 
 		<section>
 			<div id='form'>
-				<form action="consulta_agendamentos_cliente.html">
+				<form action="{{ url_for('editar_cadastro_banco') }}" method="post">
 
 					<h2>Atualize Seu Cadastro</h2>
 
 					<div>
-						<p>Nome: <input name="nome" type="text" maxlength="100"></p>
-						<p>CPF: <input name="cpf" type="number" maxlength="11" placeholder="Somente números">
+						<p>Nome: <input name="nome" type="text" maxlength="100" value="{{ cliente[1] }}"></p>
+						<p>CPF: <input name="cpf" type="number" maxlength="11" value="{{ cliente[2] }}" placeholder="Somente números">
 						</p>
-						<p>Telefone: <input name="fone" type="number" maxlength="11" placeholder="DDD + fone"></p>
+						<p>Telefone: <input name="telefone" type="number" maxlength="11" placeholder="DDD + fone" value="{{ cliente[4] }}"></p>
 
 						<p>Crie sua Senha: <input name="senha" type="password" minlength="6" maxlength="50"
-								placeholder="Mínimo 6 caracteres"></p>
+								placeholder="Mínimo 6 caracteres" value="{{ cliente[3] }}"></p>
 						<p>Confirme a Senha: <input name="confSenha" type="password" minlength="6" maxlength="50"
-								placeholder="Repita a senha"></p>
+								placeholder="Repita a senha" value="{{ cliente[3] }}"></p>
 
-						<p>Rua: <input name="rua" type="text" maxlength="50"></p>
+						<p>Rua: <input name="rua" type="text" maxlength="50" value="{{ cliente[6] }}"></p>
 
-						<p>Nº: <input name="numero" id="numero" type="number" maxlength="6">
-							CEP: <input name="cep" id="cep" type="number" maxlength="9" placeholder="Somente nº"></p>
+						<p>Nº: <input name="numero" id="numero" type="number" maxlength="6" value="{{ cliente[7] }}">
+							CEP: <input name="cep" id="cep" type="number" maxlength="9" placeholder="Somente nº" value="{{ cliente[5] }}"></p>
 
-						<p>Cidade: <input name="cidade" id="cidade" type="text" maxlength="50">
+						<p>Cidade: <input name="cidade" id="cidade" type="text" maxlength="50" value="{{ cliente[8] }}">
 
 							UF:
 							<select name="estado">
-								<option value="">--</option>
+								<option value="{{ cliente[9] }}">{{ cliente[9] }}</option>
 								<option value="ES">ES</option>
 								<option value="MG">MG</option>
 								<option value="RJ">RJ</option>

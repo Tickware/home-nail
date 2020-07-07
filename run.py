@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, request, redirect, url_for, session
 
-from models import Cliente, Fornecedor, Agendamento
+from models import Cliente, Fornecedor, Agendamento, Login
 #import sys
 #sys.path.append('../')
 import homenail_bd
@@ -34,20 +34,8 @@ def cadastrar_cliente_banco():
                       cidade=request.form['cidade'],
                       estado=request.form['estado'])
 
-    # nome = request.form['nome']
-    # cpf = request.form['cpf']
-    # senha = request.form['senha']
-    # telefone = request.form['telefone']
-    # cep = request.form['cep']
-    # rua = request.form['rua']
-    # numero = request.form['numero']
-    # cidade = request.form['cidade']
-    # estado = request.form['estado']
-
     if cliente:
-        # retorno = homenail_bd.cadastrar_cliente(nome, cpf, senha, telefone, cep, rua, numero, cidade, estado)
         retorno = homenail_bd.cadastrar_cliente(cliente) 
-
 
     return render_template('index.html')
     
@@ -123,22 +111,20 @@ def sobre():
 def autenticar():
     print('run - autenticar')
     
-
-    cpf = request.form['cpf']
-    senha = request.form['senha']
+    login = Login(cpf=request.form['cpf'], 
+                  senha=request.form['senha'])
  
-    if len(cpf) == 11:
+    if len(login.cpf) == 11:
         session['tipo'] = 'cliente'
-
-        retorno = homenail_bd.login_cliente(int(cpf), senha)
+        retorno = homenail_bd.login_cliente(login)
 
         if retorno:
-            session['usuario_logado'] = request.form['cpf']
+            session['usuario_logado'] = login.cpf
             return redirect(url_for('consulta_agendamentos_cliente'))
         else:
             return redirect(url_for('index'))
 
-    elif len(cpf) == 14:
+    elif len(login.cpf) == 14:
         session['tipo'] = 'fornec'
         return redirect(url_for('consulta_agendamentos_fornec'))
 

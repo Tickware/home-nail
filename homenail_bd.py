@@ -1,5 +1,5 @@
 import psycopg2 as pg
-from models import Cliente, Fornecedor, Agendamento
+from models import Cliente, Fornecedor, Agendamento, Login
 
 
 try:
@@ -14,9 +14,9 @@ try:
     ###Conectar no banco
     print('\n*** Banco conectado! Somente pessoal autorizado! ***\n')
 
-    def login_cliente(cpf, senha):
+    def login_cliente(login):
         print('HomeNail_login_cliente')
-        sql = f"SELECT * FROM t_clientes WHERE cpf = '{cpf}' AND senha = '{senha}'"
+        sql = f"SELECT * FROM t_clientes WHERE cpf = '{int(login.cpf)}' AND senha = '{login.senha}'"
 
         cur = con.cursor()
         cur.execute(sql)

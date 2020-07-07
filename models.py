@@ -32,7 +32,7 @@ class Agendamento:
         self.data = data
         self.hora = hora
 
-# class Login:
-#     def __init__(self, cpf, senha):
-#         self.nome = nome
-#         self.cpf = cpf
+class Login:
+    def __init__(self, cpf, senha):
+        self.cpf = cpf
+        self.senha = senha

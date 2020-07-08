@@ -1,9 +1,7 @@
-from flask import Flask, render_template, url_for, request, redirect, url_for, session
-
+from flask import Flask, render_template, url_for, request, redirect, url_for, session, send_file
 from models import Cliente, Fornec, Agendamento, Login
-#import sys
-#sys.path.append('../')
 import homenail_bd
+from exporta_json import exporta_json
 
 app = Flask(__name__)
 app.secret_key = 'Fatec_ython'
@@ -234,7 +232,7 @@ def autenticar():
         else:
             return redirect(url_for('index'))
 
-    elif login.cpf == 'admin' and login.senha == 'admin123':
+    elif login.cpf == 'administrador' and login.senha == 'admin123':
             return redirect(url_for('exportar_dados'))
 
     else:
@@ -261,7 +259,13 @@ def exportar_dados():
 @app.route('/exportar_dados_json')
 def exportar_dados_json():
     print('run - exportar_dados_json')
-    return redirect(url_for('exportar_dados'))
+    exporta_json()
+
+
+    # file = open(tabelas.zip, "rb")
+    file = 'tabelas.zip'
+
+    return send_file(file, as_attachment=True)
 
 
 if __name__ == '__main__':

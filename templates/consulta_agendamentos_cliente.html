@@ -46,8 +46,10 @@
 				<p>TABELA DE AGENDAMENTOS VAI AKI</p>
 				<p>TABELA DE AGENDAMENTOS VAI AKI</p>
 				<p>TABELA DE AGENDAMENTOS VAI AKI</p>
-
-				<input type="submit" value="Criar Agendamento" class="botao">
+				
+				<form action="{{ url_for('criar_agendamento') }}" method="post">
+					<input type="submit" value="Criar Agendamento" class="botao">
+				</form>
 			</div>
 		</section>
 

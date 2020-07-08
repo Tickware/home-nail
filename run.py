@@ -80,12 +80,13 @@ def consulta_agendamentos_fornec():
     return render_template('consulta_agendamentos_fornec.html')
 
 
-@app.route('/criar_agendamento')
+@app.route('/criar_agendamento', methods=['POST',])
 def criar_agendamento():
     print('run - criar_agendamento')
 
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect(url_for('index'))
+
     return render_template('criar_agendamento.html')
 
 

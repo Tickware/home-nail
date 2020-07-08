@@ -130,8 +130,9 @@ try:
 
     def cadastrar_agendamento(agendamento): 
         print('HomeNail_cadastrar_agendamento')
+        print(agendamento.data)
 
-        sql = f"INSERT INTO t_agenda (cpf_cliente, cnpj_fornec, tp_servico, data, hora) values('{agendamento.cpf_cliente}', {agendamento.cnpj_fornec}, '{agendamento.tp_servico}', {agendamento.data}, '{agendamento.hora}') RETURNING id"
+        sql = f"INSERT INTO t_agenda (cpf_cliente, cnpj_fornec, tp_servico, data, hora) values('{agendamento.cpf_cliente}', {agendamento.cnpj_fornec}, '{agendamento.tp_servico}', '{agendamento.data}', '{agendamento.hora}') RETURNING id"
 
         
         cur = con.cursor()
@@ -145,7 +146,7 @@ try:
             return False
 
     def agendamento_por_cliente(usuario_logado_cpf):
-        sql = f"SELECT B.nome, A.data, A.hora, A.tp_servico, A.id FROM t_agenda A JOIN t_fornecs B ON A.cnpj_fornec = B.cnpj WHERE A.cpf_cliente = '{int(usuario_logado_cpf)}'"
+        sql = f"SELECT B.nome, A.data, A.hora, A.tp_servico, A.id FROM t_agenda A JOIN t_fornecs B ON A.cnpj_fornec = B.cnpj WHERE A.cpf_cliente = '{int(usuario_logado_cpf)}' order by A.data"
 
         cur = con.cursor()
         cur.execute(sql)
@@ -155,7 +156,7 @@ try:
         return agendamentos
 
     def agendamento_por_fornec(usuario_logado_cnpj):
-        sql = f"SELECT B.nome, A.data, A.hora, A.tp_servico, A.id FROM t_agenda A JOIN t_clientes B ON A.cpf_cliente = B.cpf WHERE A.cnpj_fornec = '{int(usuario_logado_cnpj)}'"
+        sql = f"SELECT B.nome, A.data, A.hora, A.tp_servico, A.id FROM t_agenda A JOIN t_clientes B ON A.cpf_cliente = B.cpf WHERE A.cnpj_fornec = '{int(usuario_logado_cnpj)}'  order by A.data"
 
         cur = con.cursor()
         cur.execute(sql)

@@ -105,11 +105,13 @@ def criar_agendamento_banco():
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect(url_for('index'))
 
+    
     agendamento = Agendamento(cpf_cliente=session['usuario_logado'],
                               cnpj_fornec=request.form['cnpj_fornec'],
                               tp_servico=request.form['tp_servico'],
                               data=request.form['data'],
-                              hora=str(request.form['hora']))
+                              hora=request.form['hora'])
+
 
     homenail_bd.cadastrar_agendamento(agendamento)
 

@@ -3,6 +3,7 @@
 
 <head>
 	<meta charset="utf-8" />
+
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/consulta_agendamentos.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -27,7 +28,7 @@
 					<li><a href="{{ url_for('consulta_agendamentos_cliente') }}" id="atual">Meus Agendamentos</a></li>
 					<li><a href="{{ url_for('editar_cadastro_cliente') }}">Meu Cadastro</a></li>
 					<li><a href="{{ url_for('sobre') }}">Sobre</a></li>
-					<li><a href="{{ url_for('logout') }}" >Sair</a></li>
+					<li><a href="{{ url_for('logout') }}">Sair</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -35,39 +36,41 @@
 		<section>
 			<div>
 				<h2>Agendamentos Realizados</h2>
-				
-				<table class="#">
-            <thead class="#">
-                <tr>
-                    <th>Nome</th>
-                    <th>Data</th>
-                    <th>Hora</th>
-                    <th>Serviço</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-            {% for agendamento in agendamentos %}
-                <tr>
-                    <td>{{ agendamento[0] }}</td>
-                    <td>{{ agendamento[1] }}</td>
-                    <td>{{ agendamento[2] }}</td>
-                    <td>{{ agendamento[3] }}</td>
-                    <td>
-                        <a href="{{ url_for('deletar_agendamento', id_deletar=agendamento[4]) }}">Deletar</a>
-                    </td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>				
+
+				<table>
+					<thead>
+						<tr>
+							<th>Nome</th>
+							<th>Data</th>
+							<th>Hora</th>
+							<th>Serviço</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for agendamento in agendamentos %}
+						<tr>
+							<td>{{ agendamento[0] }}</td>
+							<td>{{ agendamento[1] }}</td>
+							<td>{{ agendamento[2] }}</td>
+							<td>{{ agendamento[3] }}</td>
+							<td>
+								<a href="{{ url_for('deletar_agendamento', id_deletar=agendamento[4]) }}">Deletar</a>
+							</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+
 				<form action="{{ url_for('criar_agendamento') }}" method="post">
 					<input type="submit" value="Criar Agendamento" class="botao">
 				</form>
+
 			</div>
 		</section>
 
 		<footer class="footer">
-			<p>Home Nail&trade; é um app feito por <a href="https://tickware.com.br/"> Tickware, Inc.</a></p>
+			<p>Home Nail&trade; é um app feito por <a href="https://tickware.com.br/">Tickware, Inc.</a></p>
 		</footer>
 
 	</div>

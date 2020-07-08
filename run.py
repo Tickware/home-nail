@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, request, redirect, url_for, session
 
-from models import Cliente, Fornecedor, Agendamento, Login
+from models import Cliente, Fornec, Agendamento, Login
 #import sys
 #sys.path.append('../')
 import homenail_bd
@@ -166,6 +166,11 @@ def sobre():
     print('run - sobre')
     return render_template('sobre.html')
 
+@app.route('/sobre_fornec')
+def sobre_fornec():
+    print('run - _fornec')
+    return render_template('sobre_fornec.html')
+
 
 @app.route('/autenticar', methods=['POST',])
 def autenticar():
@@ -186,7 +191,19 @@ def autenticar():
 
     elif len(login.cpf) == 14:
         session['tipo'] = 'fornec'
-        return redirect(url_for('consulta_agendamentos_fornec'))
+        retorno = homenail_bd.login_fornec(login)
+
+        if retorno:
+            session['usuario_logado'] = login.cpf
+            return redirect(url_for('consulta_agendamentos_fornec'))
+        else:
+            return redirect(url_for('index'))
+
+    elif login.cpf == 'admin' and login.senha == 'admin123':
+            return redirect(url_for('exportar_dados'))
+
+    else:
+        return redirect(url_for('index'))
 
     return redirect(url_for('index'))
 
@@ -198,6 +215,11 @@ def logout():
     session['usuario_logado'] = None
     # flash('Nenhum Usuário logado!')
     return redirect(url_for('index'))
+
+@app.route('/exportar_dados')
+def exportar_dados():
+    print('run - exportar_dados')
+    return render_template('exportar_dados.html')
 
 if __name__ == '__main__':
     app.run(debug=True) 

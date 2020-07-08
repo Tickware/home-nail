@@ -1,5 +1,5 @@
 import psycopg2 as pg
-from models import Cliente, Fornecedor, Agendamento, Login
+from models import Cliente, Fornec, Agendamento, Login
 
 
 try:
@@ -108,7 +108,7 @@ try:
         cur.execute(sql)
         con.commit()
 
-    def atualiza_fornecs(fornec):
+    def atualiza_fornec(fornec):
         print('HomeNail_atualiza_fornec')
 
         sql = f"UPDATE t_fornecs SET nome = '{fornec.nome}', senha = '{fornec.senha}', telefone =  {fornec.telefone}, cidade = '{fornec.cidade}', estado =  '{fornec.estado}'  WHERE cnpj = {fornec.cnpj}"

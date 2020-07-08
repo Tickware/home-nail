@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nome": "Fatima Bernardes",
+    "cpf": 12345678901,
+    "senha": "123456",
+    "telefone": 1636363636,
+    "cep": "14140000",
+    "rua": "da globo",
+    "numero": 11,
+    "cidade": "S\u00e3o Bernardes",
+    "estado": "SP"
+  },
+  {
+    "id": 2,
+    "nome": "Ana Maria Braga",
+    "cpf": 98765432101,
+    "senha": "123456",
+    "telefone": 1663636363,
+    "cep": "14140000",
+    "rua": "dos louros",
+    "numero": 12,
+    "cidade": "mais voce",
+    "estado": "MG"
+  }
+]

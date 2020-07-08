@@ -141,7 +141,6 @@ def editar_cadastro_cliente():
     
     cliente = homenail_bd.busca_dados_cliente(session['usuario_logado'])
 
-
     return render_template('editar_cadastro_cliente.html', cliente=cliente)
 
 @app.route('/editar_cliente_banco', methods=['POST',])

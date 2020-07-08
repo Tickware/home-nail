@@ -1,9 +1,9 @@
 section {
-    background-color: rgb(149,104,239);
-    color: #ffffff;
+	background-color: rgb(149, 104, 239);
+	color: #ffffff;
 	font-family: 'Oswald';
-    padding-top: 5%;
-    padding-bottom: 5%;
+	padding-top: 5%;
+	padding-bottom: 5%;
 }
 
 div {
@@ -30,16 +30,41 @@ p {
 }
 
 #atual {
-	background-color: rgb(149,104,239);
+	background-color: rgb(149, 104, 239);
 	color: #ffffff;
 }
 
 .botao {
+	border-radius: 5px;
 	font-family: 'Oswald';
 	font-size: 20pt;
 	font-weight: normal;
 	height: 5%;
-    margin-bottom: 2%;
-    margin-top: 4%;
+	margin-bottom: 2%;
+	margin-top: 4%;
 	width: 200px;
+}
+
+th {
+	font-family: 'Oswald';
+	font-size: 18pt;
+	font-style: italic;
+	height: 30px;
+	width: 400px;
+}
+
+td {
+	border: 2px solid white;
+	font-family: 'Oswald';
+	font-size: 16pt;
+	height: 25px;
+}
+
+table a {
+	color: black;
+	text-decoration: none;
+}
+
+table a:hover {
+	color: rgb(255, 255, 255);
 }

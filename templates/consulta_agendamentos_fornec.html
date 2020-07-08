@@ -33,16 +33,27 @@
 			<div>
 				<h2>Agendamentos Realizados</h2>
 
-				<p>TABELA DE AGENDAMENTOS VAI AKI</p>
-				<p>TABELA DE AGENDAMENTOS VAI AKI</p>
-				<p>TABELA DE AGENDAMENTOS VAI AKI</p>
-				<p>TABELA DE AGENDAMENTOS VAI AKI</p>
-				<p>TABELA DE AGENDAMENTOS VAI AKI</p>
-				<p>TABELA DE AGENDAMENTOS VAI AKI</p>
-				<p>TABELA DE AGENDAMENTOS VAI AKI</p>
-				<p>TABELA DE AGENDAMENTOS VAI AKI</p>
-				<p>TABELA DE AGENDAMENTOS VAI AKI</p>
-				<p>TABELA DE AGENDAMENTOS VAI AKI</p>
+				<table>
+					<thead>
+						<tr>
+							<th>Cliente</th>
+							<th>Data</th>
+							<th>Hora</th>
+							<th>Serviço</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for agendamento in agendamentos %}
+						<tr>
+							<td>{{ agendamento[0] }}</td>
+							<td>{{ agendamento[1] }}</td>
+							<td>{{ agendamento[2] }}</td>
+							<td>{{ agendamento[3] }}</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+
 			</div>
 		</section>
 

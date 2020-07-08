@@ -1,0 +1,42 @@
+.header h1 {
+	color: #ffffff;
+    font: normal 40pt 'Oswald';
+	padding-bottom: 2.7%;
+	padding-top: 2.5%;
+}
+
+section {
+    background-color: rgb(149,104,239);
+    color: #ffffff;
+	font-family: 'Oswald';
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+div {
+	border-radius: 20px;
+	border: 2px #ffffff;
+	border-style: solid;
+	font-family: 'Oswald';
+	margin: auto;
+	padding: 2%;
+	text-align: center;
+	width: 35em;
+}
+
+h2 {
+	font-size: 30pt;
+	font-weight: normal;
+	margin-bottom: 8%;
+	text-decoration: underline overline;
+}
+
+input {
+    border-radius: 15px;
+	font-family: 'Oswald';
+	font-size: 30pt;
+	height: 150px;
+    margin-bottom: 2%;
+    margin-top: 4%;
+	width: 300px;
+}

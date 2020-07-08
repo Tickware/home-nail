@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="utf-8" />
+	
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/exportar_dados.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	
+	<link rel="stylesheet" href="../static/css/reset.css">
+	<link rel="stylesheet" href="../static/css/exportar_dados.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+
+	<link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+	
+	<title>Home Nail - Área Admin</title>
+</head>
+
+<body>
+	<div class="interface">
+		<img class="logo" src="{{ url_for('static', filename='img/logo.png') }}">
+
+		<header class="header">
+			<h1>Exportar Dados</h1>
+		</header>
+
+		<section>
+			<div>
+				<form action="{{ url_for('MUDAR ISSO AQUI') }}" method="post">
+
+					<h2>Exporte os Dados para Json</h2>
+
+					<input type="submit" value="Exportar">
+					<input type="submit" value="Sair">
+				</form>
+			</div>
+		</section>
+
+		<footer class="footer">
+			<p>Home Nail&trade; é um app feito por <a href="https://tickware.com.br/"> Tickware, Inc.</a></p>
+		</footer>
+
+	</div>
+</body>
+
+</html>

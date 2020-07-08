@@ -20,6 +20,7 @@ def cadastrar_cliente():
     print('run - cadastrar_cliente')
     return render_template('cadastrar_cliente.html')
 
+
 @app.route('/cadastrar_cliente_banco', methods=['POST',])
 def cadastrar_cliente_banco():
     print('run - cadastrar_cliente_banco')
@@ -62,6 +63,7 @@ def cadastrar_fornec_banco():
 
     return render_template('index.html')
 
+
 @app.route('/consulta_agendamentos_cliente')
 def consulta_agendamentos_cliente():
     print('run - consulta_agendamentos_cliente')
@@ -85,6 +87,7 @@ def consulta_agendamentos_fornec():
 
     return render_template('consulta_agendamentos_fornec.html', agendamentos=agendamentos)
 
+
 @app.route('/criar_agendamento', methods=['POST',])
 def criar_agendamento():
     print('run - criar_agendamento')
@@ -93,9 +96,6 @@ def criar_agendamento():
         return redirect(url_for('index'))
 
     fornecs = homenail_bd.busca_dados_todos_fornec()
-
-    # for fornec in fornecs:
-    #     print(fornec[2])
 
     return render_template('criar_agendamento.html', fornecs=fornecs)
 
@@ -115,7 +115,7 @@ def criar_agendamento_banco():
 
     homenail_bd.cadastrar_agendamento(agendamento)
 
-    return render_template('criar_agendamento.html')
+    return redirect('consulta_agendamentos_cliente')
 
 
 @app.route('/deletar_agendamento/<int:id_deletar>')
@@ -125,8 +125,6 @@ def deletar_agendamento(id_deletar):
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect(url_for('index'))
     
-    # print(request.form('id_deletar'))
-
     homenail_bd.deletar_agendamento(id_deletar)
 
     return redirect(url_for('consulta_agendamentos_cliente'))
@@ -142,6 +140,7 @@ def editar_cadastro_cliente():
     cliente = homenail_bd.busca_dados_cliente(session['usuario_logado'])
 
     return render_template('editar_cadastro_cliente.html', cliente=cliente)
+
 
 @app.route('/editar_cliente_banco', methods=['POST',])
 def editar_cliente_banco():
@@ -162,7 +161,7 @@ def editar_cliente_banco():
 
     homenail_bd.atualiza_cliente(cliente)
     
-    return render_template('consulta_agendamentos_cliente.html')
+    return redirect(url_for('consulta_agendamentos_cliente'))
 
 
 @app.route('/editar_cadastro_fornec')
@@ -175,6 +174,7 @@ def editar_cadastro_fornec():
     fornec = homenail_bd.busca_dados_fornec(session['usuario_logado'])
 
     return render_template('editar_cadastro_fornec.html', fornec=fornec)
+
 
 @app.route('/editar_fornec_banco', methods=['POST',])
 def editar_fornec_banco():
@@ -192,12 +192,14 @@ def editar_fornec_banco():
 
     homenail_bd.atualiza_fornec(fornec)
     
-    return render_template('consulta_agendamentos_fornec.html')
+    return redirect(url_for('consulta_agendamentos_fornec'))
+
 
 @app.route('/sobre')
 def sobre():
     print('run - sobre')
     return render_template('sobre.html')
+
 
 @app.route('/sobre_fornec')
 def sobre_fornec():
@@ -249,15 +251,18 @@ def logout():
     # flash('Nenhum Usuário logado!')
     return redirect(url_for('index'))
 
+
 @app.route('/exportar_dados')
 def exportar_dados():
     print('run - exportar_dados')
     return render_template('exportar_dados.html')
 
+
 @app.route('/exportar_dados_json')
 def exportar_dados_json():
     print('run - exportar_dados_json')
     return redirect(url_for('exportar_dados'))
+
 
 if __name__ == '__main__':
     app.run(debug=True) 

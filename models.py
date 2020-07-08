@@ -12,11 +12,11 @@ class Cliente:
         self.estado = estado
 
 
-class Fornecedor:
-    def __init__(self, nome, cpf, senha, telefone, cidade, estado, id=None):
+class Fornec:
+    def __init__(self, nome, cnpj, senha, telefone, cidade, estado, id=None):
         self.id = id
         self.nome = nome
-        self.cpf = cpf
+        self.cnpj = cnpj
         self.senha = senha
         self.telefone = telefone
         self.cidade = cidade

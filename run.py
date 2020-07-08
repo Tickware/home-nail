@@ -43,10 +43,24 @@ def cadastrar_cliente_banco():
 @app.route('/cadastrar_fornec')
 def cadastrar_fornec():
     print('run - cadastrar_fornec')
-    # if 'usuario_logado' not in session or session['usuario_logado'] == None:
-    #     return redirect(url_for('index'))
     return render_template('cadastrar_fornec.html')
 
+
+@app.route('/cadastrar_fornec_banco', methods=['POST',])
+def cadastrar_fornec_banco():
+    print('run - cadastrar_fornec_banco')
+
+    fornec = Fornec(nome=request.form['nome'],
+                      cnpj=int(request.form['cnpj']),
+                      senha=request.form['senha'],
+                      telefone=int(request.form['telefone']),
+                      cidade=request.form['cidade'],
+                      estado=request.form['estado'])
+
+    if fornec:
+        homenail_bd.cadastrar_fornec(fornec) 
+
+    return render_template('index.html')
 
 @app.route('/consulta_agendamentos_cliente')
 def consulta_agendamentos_cliente():
@@ -96,8 +110,8 @@ def editar_cadastro_cliente():
 
     return render_template('editar_cadastro_cliente.html', cliente=cliente)
 
-@app.route('/editar_cadastro_banco', methods=['POST',])
-def editar_cadastro_banco():
+@app.route('/editar_cliente_banco', methods=['POST',])
+def editar_cliente_banco():
     print('run - editar_cadastro_banco')
 
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
@@ -124,7 +138,28 @@ def editar_cadastro_fornec():
 
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect(url_for('index'))
-    return render_template('editar_cadastro_fornec.html')
+    
+    fornec = homenail_bd.busca_dados_fornec(session['usuario_logado'])
+
+    return render_template('editar_cadastro_fornec.html', fornec=fornec)
+
+@app.route('/editar_fornec_banco', methods=['POST',])
+def editar_fornec_banco():
+    print('run - editar_cadastro_banco')
+
+    if 'usuario_logado' not in session or session['usuario_logado'] == None:
+        return redirect(url_for('index'))
+    
+    fornec = Fornec(nome=request.form['nome'],
+                    cnpj=int(request.form['cnpj']),
+                    senha=request.form['senha'],
+                    telefone=int(request.form['telefone']),
+                    cidade=request.form['cidade'],
+                    estado=request.form['estado'])
+
+    homenail_bd.atualiza_fornec(fornec)
+    
+    return render_template('consulta_agendamentos_fornec.html')
 
 @app.route('/sobre')
 def sobre():

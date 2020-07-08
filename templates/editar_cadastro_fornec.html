@@ -29,26 +29,26 @@
 
 		<section>
 			<div id='form'>
-				<form action="consulta_agendamentos_fornec.html">
+				<form  action="{{ url_for('editar_fornec_banco') }}" method="post"">
 
 					<h2>Atualize Seu Cadastro</h2>
 
 					<div>
-						<p>Nome: <input name="nome" type="text" maxlength="100"></p>
-						<p>CPF: <input name="cpf" type="number" maxlength="11" placeholder="Somente números">
+						<p>Nome: <input name="nome" type="text" maxlength="100" value="{{ fornec[1] }}"></p>
+						<p>CNPJ: <input name="cnpj" type="number" maxlength="11" placeholder="Somente números" value="{{ fornec[2] }}">
 						</p>
-						<p>Telefone: <input name="fone" type="number" maxlength="11" placeholder="DDD + fone"></p>
+						<p>Telefone: <input name="telefone" type="number" maxlength="11" placeholder="DDD + fone" value="{{ fornec[3] }}"></p>
 
 						<p>Crie sua Senha: <input name="senha" type="password" minlength="6" maxlength="50"
-								placeholder="Mínimo 6 caracteres"></p>
+								placeholder="Mínimo 6 caracteres" value="{{ fornec[4] }}"></p>
 						<p>Confirme a Senha: <input name="confSenha" type="password" minlength="6" maxlength="50"
-								placeholder="Repita a senha"></p>
+								placeholder="Repita a senha" value="{{ fornec[4] }}"></p>
 
-						<p>Cidade: <input name="cidade" id="cidade" type="text" maxlength="50">
+						<p>Cidade: <input name="cidade" id="cidade" type="text" maxlength="50" value="{{ fornec[5] }}">
 
 							UF:
 							<select name="estado">
-								<option value="">--</option>
+								<option value="{{ fornec[6] }}">{{ fornec[4] }}</option>
 								<option value="ES">ES</option>
 								<option value="MG">MG</option>
 								<option value="RJ">RJ</option>

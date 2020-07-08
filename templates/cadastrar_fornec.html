@@ -24,15 +24,15 @@
 
 		<section>
 			<div id='form'>
-				<form action="agendamentos.html">
+				<form action="{{ url_for('cadastrar_fornec_banco') }}" method="post">
 
 					<h2>Faça Seu Cadastro</h2>
 
 					<div>
 						<p>Nome: <input name="nome" type="text" maxlength="100"></p>
-						<p>CPF: <input name="cpf" type="number" maxlength="11" placeholder="Somente números">
+						<p>CNPJ: <input name="cnpj" type="number" maxlength="11" placeholder="Somente números">
 						</p>
-						<p>Telefone: <input name="fone" type="number" maxlength="11" placeholder="DDD + fone"></p>
+						<p>Telefone: <input name="telefone" type="number" maxlength="11" placeholder="DDD + fone"></p>
 
 						<p>Crie sua Senha: <input name="senha" type="password" minlength="6" maxlength="50"
 								placeholder="Mínimo 6 caracteres"></p>

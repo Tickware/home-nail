@@ -35,18 +35,31 @@
 		<section>
 			<div>
 				<h2>Agendamentos Realizados</h2>
-
-				<p>TABELA DE AGENDAMENTOS VAI AKI</p>
-				<p>TABELA DE AGENDAMENTOS VAI AKI</p>
-				<p>TABELA DE AGENDAMENTOS VAI AKI</p>
-				<p>TABELA DE AGENDAMENTOS VAI AKI</p>
-				<p>TABELA DE AGENDAMENTOS VAI AKI</p>
-				<p>TABELA DE AGENDAMENTOS VAI AKI</p>
-				<p>TABELA DE AGENDAMENTOS VAI AKI</p>
-				<p>TABELA DE AGENDAMENTOS VAI AKI</p>
-				<p>TABELA DE AGENDAMENTOS VAI AKI</p>
-				<p>TABELA DE AGENDAMENTOS VAI AKI</p>
 				
+				<table class="#">
+            <thead class="#">
+                <tr>
+                    <th>Nome</th>
+                    <th>Data</th>
+                    <th>Hora</th>
+                    <th>Serviço</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for agendamento in agendamentos %}
+                <tr>
+                    <td>{{ agendamento[0] }}</td>
+                    <td>{{ agendamento[1] }}</td>
+                    <td>{{ agendamento[2] }}</td>
+                    <td>{{ agendamento[3] }}</td>
+                    <td>
+                        <a href="{{ url_for('deletar_agendamento', id_deletar=agendamento[4]) }}">Deletar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>				
 				<form action="{{ url_for('criar_agendamento') }}" method="post">
 					<input type="submit" value="Criar Agendamento" class="botao">
 				</form>

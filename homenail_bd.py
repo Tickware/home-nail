@@ -41,7 +41,6 @@ try:
             return False
 
 
-    # def cadastrar_cliente(nome, cpf, senha, telefone, cep, rua, numero, cidade, estado): 
     def cadastrar_cliente(cliente): 
         print('HomeNail_Cadastro_Cliente')
 
@@ -95,9 +94,22 @@ try:
         cur = con.cursor()
         cur.execute(sql)
 
-        cliente = cur.fetchone()
+        fornec = cur.fetchone()
 
-        return cliente
+        return fornec
+
+    
+    def busca_dados_todos_fornec():
+        print('busca_dados_todos_fornec')
+
+        sql = f"SELECT * FROM t_fornecs"
+
+        cur = con.cursor()
+        cur.execute(sql)
+
+        fornec = cur.fetchall()
+
+        return fornec
 
 
     def atualiza_cliente(cliente):
@@ -115,6 +127,41 @@ try:
         cur = con.cursor()
         cur.execute(sql)
         con.commit()
+
+    def cadastrar_agendamento(agendamento): 
+        print('HomeNail_cadastrar_agendamento')
+
+        sql = f"INSERT INTO t_agenda (cpf_cliente, cnpj_fornec, tp_servico, data, hora) values('{agendamento.cpf_cliente}', {agendamento.cnpj_fornec}, '{agendamento.tp_servico}', {agendamento.data}, '{agendamento.hora}') RETURNING id"
+
+        
+        cur = con.cursor()
+        cur.execute(sql)
+        id = cur.fetchone()[0]
+        con.commit()
+
+        if id:
+            return True
+        else:
+            return False
+
+    def agendamento_por_cliente(usuario_logado_cpf):
+        sql = f"SELECT B.nome, A.data, A.hora, A.tp_servico, A.id FROM t_agenda A JOIN t_fornecs B ON A.cnpj_fornec = B.cnpj WHERE A.cpf_cliente = '{int(usuario_logado_cpf)}'"
+
+        cur = con.cursor()
+        cur.execute(sql)
+
+        agendamentos = cur.fetchall()
+
+        return agendamentos
+
+    
+    def deletar_agendamento(id_deletar):
+        sql = f"DELETE FROM t_agenda  WHERE id = {id_deletar}"
+
+        cur = con.cursor()
+        cur.execute(sql)
+        con.commit()
+
 
 except Exception as erro:
     print(erro)

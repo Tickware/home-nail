@@ -18,12 +18,9 @@ try:
     1 - Criar Tabela Clientes
     2 - Criar Tabela fornecedores
     3 - Criar Tabela Agenda
-    4 - Cadastrar cliente
-    5 - Cadastrar Fornecedor
-    6 - Login
-    7 - Apagar Agenda (Não funciona)
-    8 - Apagar Clientes (Não funciona)
-    9 - Apagar Fornecedores (Não funciona)
+    4 - Apagar Agenda (Não funciona)
+    5 - Apagar Clientes (Não funciona)
+    6 - Apagar Fornecedores (Não funciona)
     0 - Exit\n'''
 
     # ###Criar tabela t_clientes
@@ -53,7 +50,7 @@ try:
     # ###Criar tabela t_agenda
     def criaTabelaAgenda():
         os.system('cls')
-        sql = 'CREATE TABLE t_agenda(id serial, id_cliente integer, id_fornec integer, tp_serviço varchar(1), status varchar(1), data date, hora time, UNIQUE(id), CONSTRAINT pk_t_agenda PRIMARY KEY (id), CONSTRAINT fk_t_agenda_clientes FOREIGN KEY (id_cliente) REFERENCES t_clientes(id), CONSTRAINT fk_t_agenda_fornecs FOREIGN KEY (id_fornec) REFERENCES t_fornecs(id));'
+        sql = 'CREATE TABLE t_agenda(id serial, cpf_cliente bigint, cnpj_fornec bigint, tp_servico varchar(20), data varchar(20), hora varchar(20), UNIQUE(id), CONSTRAINT pk_t_agenda PRIMARY KEY (id), CONSTRAINT fk_t_agenda_clientes FOREIGN KEY (cpf_cliente) REFERENCES t_clientes(cpf), CONSTRAINT fk_t_agenda_fornecs FOREIGN KEY (cnpj_fornec) REFERENCES t_fornecs(cnpj));'
 
         cur = con.cursor()
         cur.execute(sql)
@@ -244,21 +241,12 @@ try:
             criaTabelaAgenda()
 
         elif n == 4:
-            cadastraCliente()
-
-        elif n == 5:
-            cadastraFornec()
-
-        elif n == 6:
-            login()
-
-        elif n == 7:
             apagaAgenda()
 
-        elif n == 7:
+        elif n == 5:
             apagaClientes()
 
-        elif n == 7:
+        elif n == 6:
             apagaFornecedores()
 
         elif n == 0:

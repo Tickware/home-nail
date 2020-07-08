@@ -23,13 +23,14 @@
 					<li><a action="consulta_agendamentos_cliente.html" id="atual">Meus Agendamentos</a></li>
 					<li><a action="editar_cadastro_cliente.html">Meu Cadastro</a></li>
 					<li><a action="sobre.html">Sobre</a></li>
+					<li><a href="{{ url_for('logout') }}" >Sair</a></li>
 				</ul>
 			</nav>
 		</header>
 
 		<section>
 			<div id='form'>
-				<form method="GET">
+				<form action="{{ url_for('criar_agendamento_banco') }}" method="post">
 
 					<h2>Agende um Horário</h2>
 
@@ -38,14 +39,21 @@
 						<p>Horário: <input name="hora" type="time"></p>
 
 						<p>Tipo de Serviço:
-							<select name="tp_serviço">
-								<option value="">Pé</option>
-								<option value="">Mão</option>
-								<option value="">Pé e Mão</option>
+							<select name="tp_servico">
+								<option value="Pé">Pé</option>
+								<option value="Mão">Mão</option>
+								<option value="Pé e Mão">Pé e Mão</option>
 							</select>
 						</p>
 
-						<p>Manicure: <input name="id_fornec" type="text" maxlength="50"></p>
+
+						<p>Manicure: 
+							<select name="cnpj_fornec">
+								{% for fornec in fornecs: %}
+								<option value="{{ fornec[2] }}">{{ fornec[1] }}</option>
+								{% endfor %}
+							</select>
+						</p>
 					</div>
 
 					<input type="submit" value="Agendar" id="agendar">

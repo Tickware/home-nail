@@ -68,7 +68,10 @@ def consulta_agendamentos_cliente():
 
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect(url_for('index'))
-    return render_template('consulta_agendamentos_cliente.html')
+
+    agendamentos = homenail_bd.agendamento_por_cliente(session['usuario_logado'])
+    
+    return render_template('consulta_agendamentos_cliente.html', agendamentos=agendamentos)
 
 
 @app.route('/consulta_agendamentos_fornec')
@@ -87,16 +90,44 @@ def criar_agendamento():
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect(url_for('index'))
 
-    return render_template('criar_agendamento.html')
+    fornecs = homenail_bd.busca_dados_todos_fornec()
+
+    # for fornec in fornecs:
+    #     print(fornec[2])
+
+    return render_template('criar_agendamento.html', fornecs=fornecs)
 
 
-@app.route('/editar_agendamento')
-def editar_agendamento():
-    print('run - editar_agendamento')
+@app.route('/criar_agendamento_banco', methods=['POST',])
+def criar_agendamento_banco():
+    print('run - criar_agendamento_banco')
 
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect(url_for('index'))
-    return render_template('editar_agendamento.html')
+
+    agendamento = Agendamento(cpf_cliente=session['usuario_logado'],
+                              cnpj_fornec=request.form['cnpj_fornec'],
+                              tp_servico=request.form['tp_servico'],
+                              data=request.form['data'],
+                              hora=str(request.form['hora']))
+
+    homenail_bd.cadastrar_agendamento(agendamento)
+
+    return render_template('criar_agendamento.html')
+
+
+@app.route('/deletar_agendamento/<int:id_deletar>')
+def deletar_agendamento(id_deletar):
+    print('run - deletar_agendamento')
+    
+    if 'usuario_logado' not in session or session['usuario_logado'] == None:
+        return redirect(url_for('index'))
+    
+    # print(request.form('id_deletar'))
+
+    homenail_bd.deletar_agendamento(id_deletar)
+
+    return redirect(url_for('consulta_agendamentos_cliente'))
 
 
 @app.route('/editar_cadastro_cliente')
@@ -221,6 +252,11 @@ def logout():
 def exportar_dados():
     print('run - exportar_dados')
     return render_template('exportar_dados.html')
+
+@app.route('/exportar_dados_json')
+def exportar_dados_json():
+    print('run - exportar_dados_json')
+    return redirect(url_for('exportar_dados'))
 
 if __name__ == '__main__':
     app.run(debug=True) 

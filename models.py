@@ -24,11 +24,11 @@ class Fornec:
 
 
 class Agendamento:
-    def __init__(self, id_cliente, tp_servico, status, data, hora, id=None):
+    def __init__(self, cpf_cliente, cnpj_fornec, tp_servico, data, hora, id=None):
         self.id = id
-        self.id_cliente = id_cliente
+        self.cpf_cliente = cpf_cliente
+        self.cnpj_fornec = cnpj_fornec
         self.tp_servico = tp_servico
-        self.status = status
         self.data = data
         self.hora = hora
 

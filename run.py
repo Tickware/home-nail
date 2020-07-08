@@ -40,7 +40,7 @@ def cadastrar_cliente_banco():
     return render_template('index.html')
     
 
-@app.route('/cadastrar_fornec')
+@app.route('/cadastrar_fornec', methods=['POST',])
 def cadastrar_fornec():
     print('run - cadastrar_fornec')
     return render_template('cadastrar_fornec.html')
@@ -80,8 +80,10 @@ def consulta_agendamentos_fornec():
 
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect(url_for('index'))
-    return render_template('consulta_agendamentos_fornec.html')
 
+    agendamentos = homenail_bd.agendamento_por_fornec(session['usuario_logado'])
+
+    return render_template('consulta_agendamentos_fornec.html', agendamentos=agendamentos)
 
 @app.route('/criar_agendamento', methods=['POST',])
 def criar_agendamento():

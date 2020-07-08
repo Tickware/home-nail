@@ -154,6 +154,16 @@ try:
 
         return agendamentos
 
+    def agendamento_por_fornec(usuario_logado_cnpj):
+        sql = f"SELECT B.nome, A.data, A.hora, A.tp_servico, A.id FROM t_agenda A JOIN t_clientes B ON A.cpf_cliente = B.cpf WHERE A.cnpj_fornec = '{int(usuario_logado_cnpj)}'"
+
+        cur = con.cursor()
+        cur.execute(sql)
+
+        agendamentos = cur.fetchall()
+
+        return agendamentos
+
     
     def deletar_agendamento(id_deletar):
         sql = f"DELETE FROM t_agenda  WHERE id = {id_deletar}"

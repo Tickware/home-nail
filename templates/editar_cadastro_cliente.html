@@ -3,6 +3,7 @@
 
 <head>
 	<meta charset="utf-8" />
+
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/cadastrar.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -20,10 +21,10 @@
 		<header class="header">
 			<nav class="menu">
 				<ul>
-					<li><a href="{{ url_for('consulta_agendamentos_cliente') }}" >Meus Agendamentos</a></li>
+					<li><a href="{{ url_for('consulta_agendamentos_cliente') }}">Meus Agendamentos</a></li>
 					<li><a href="{{ url_for('editar_cadastro_cliente') }}" id="atual">Meu Cadastro</a></li>
-					<li><a href="{{ url_for('logout') }}" >Sair</a></li>
 					<li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+					<li><a href="{{ url_for('logout') }}">Sair</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -36,9 +37,12 @@
 
 					<div>
 						<p>Nome: <input name="nome" type="text" maxlength="100" value="{{ cliente[1] }}"></p>
-						<p>CPF: <input name="cpf" type="number" maxlength="11" value="{{ cliente[2] }}" placeholder="Somente números">
+						<p>CPF: <input name="cpf" type="text" maxlength="11" value="{{ cliente[2] }}"
+								placeholder="Somente números">
 						</p>
-						<p>Telefone: <input name="telefone" type="number" maxlength="11" placeholder="DDD + fone" value="{{ cliente[4] }}"></p>
+						<p>Telefone: <input name="telefone" type="number" placeholder="DDD + fone"
+								value="{{ cliente[4] }}">
+						</p>
 
 						<p>Crie sua Senha: <input name="senha" type="password" minlength="6" maxlength="50"
 								placeholder="Mínimo 6 caracteres" value="{{ cliente[3] }}"></p>
@@ -48,7 +52,8 @@
 						<p>Rua: <input name="rua" type="text" maxlength="50" value="{{ cliente[6] }}"></p>
 
 						<p>Nº: <input name="numero" id="numero" type="number" maxlength="6" value="{{ cliente[7] }}">
-							CEP: <input name="cep" id="cep" type="number" maxlength="9" placeholder="Somente nº" value="{{ cliente[5] }}"></p>
+							CEP: <input name="cep" id="cep" type="number" maxlength="9" placeholder="Somente nº"
+								value="{{ cliente[5] }}"></p>
 
 						<p>Cidade: <input name="cidade" id="cidade" type="text" maxlength="50" value="{{ cliente[8] }}">
 

@@ -3,6 +3,7 @@
 
 <head>
 	<meta charset="utf-8" />
+
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/consulta_agendamentos.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -20,10 +21,10 @@
 		<header class="header">
 			<nav class="menu">
 				<ul>
-					<li><a href="{{ url_for('consulta_agendamentos_fornec') }}"  id="atual">Meus Agendamentos</a></li>
-					<li><a href="{{ url_for('editar_cadastro_fornec') }}" >Meu Cadastro</a></li>
-					<li><a href="{{ url_for('logout') }}" >Sair</a></li>
+					<li><a href="{{ url_for('consulta_agendamentos_fornec') }}" id="atual">Meus Agendamentos</a></li>
+					<li><a href="{{ url_for('editar_cadastro_fornec') }}">Meu Cadastro</a></li>
 					<li><a href="{{ url_for('sobre_fornec') }}">Sobre</a></li>
+					<li><a href="{{ url_for('logout') }}">Sair</a></li>
 				</ul>
 			</nav>
 		</header>

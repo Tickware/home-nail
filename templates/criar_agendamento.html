@@ -3,6 +3,7 @@
 
 <head>
 	<meta charset="utf-8" />
+
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/criar_editar_agendamento.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -20,10 +21,10 @@
 		<header class="header">
 			<nav class="menu">
 				<ul>
-					<li><a action="consulta_agendamentos_cliente.html" id="atual">Meus Agendamentos</a></li>
-					<li><a action="editar_cadastro_cliente.html">Meu Cadastro</a></li>
-					<li><a action="sobre.html">Sobre</a></li>
-					<li><a href="{{ url_for('logout') }}" >Sair</a></li>
+					<li><a href="{{ url_for('consulta_agendamentos_cliente') }}" id="atual">Meus Agendamentos</a></li>
+					<li><a href="{{ url_for('editar_cadastro_cliente') }}">Meu Cadastro</a></li>
+					<li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+					<li><a href="{{ url_for('logout') }}">Sair</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -47,7 +48,7 @@
 						</p>
 
 
-						<p>Manicure: 
+						<p>Manicure:
 							<select name="cnpj_fornec">
 								{% for fornec in fornecs: %}
 								<option value="{{ fornec[2] }}">{{ fornec[1] }}</option>

@@ -3,6 +3,7 @@
 
 <head>
 	<meta charset="utf-8" />
+
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/cadastrar.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -21,23 +22,26 @@
 				<ul>
 					<li><a href="{{ url_for('consulta_agendamentos_fornec') }}">Meus Agendamentos</a></li>
 					<li><a href="{{ url_for('editar_cadastro_fornec') }}" id="atual">Meu Cadastro</a></li>
-					<li><a href="{{ url_for('logout') }}" >Sair</a></li>
 					<li><a href="{{ url_for('sobre_fornec') }}">Sobre</a></li>
+					<li><a href="{{ url_for('logout') }}">Sair</a></li>
 				</ul>
 			</nav>
 		</header>
 
 		<section>
 			<div id='form'>
-				<form  action="{{ url_for('editar_fornec_banco') }}" method="post"">
+				<form action="{{ url_for('editar_fornec_banco') }}" method="post">
 
 					<h2>Atualize Seu Cadastro</h2>
 
 					<div>
 						<p>Nome: <input name="nome" type="text" maxlength="100" value="{{ fornec[1] }}"></p>
-						<p>CNPJ: <input name="cnpj" type="number" maxlength="11" placeholder="Somente números" value="{{ fornec[2] }}">
+						<p>CNPJ: <input name="cnpj" type="text" maxlength="14" placeholder="Somente números"
+								value="{{ fornec[2] }}"></p>
+
+						<p>Telefone: <input name="telefone" type="number" placeholder="DDD + fone"
+								value="{{ fornec[4] }}">
 						</p>
-						<p>Telefone: <input name="telefone" type="number" maxlength="11" placeholder="DDD + fone" value="{{ fornec[4] }}"></p>
 
 						<p>Crie sua Senha: <input name="senha" type="password" minlength="6" maxlength="50"
 								placeholder="Mínimo 6 caracteres" value="{{ fornec[3] }}"></p>

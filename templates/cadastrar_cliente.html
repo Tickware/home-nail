@@ -3,14 +3,15 @@
 
 <head>
 	<meta charset="utf-8" />
-	
+
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/cadastrar.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
 	<link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
-	
+
 	<title>Home Nail - Cadastro de Cliente</title>
+
 </head>
 
 <body>
@@ -29,19 +30,21 @@
 
 					<div>
 						<p>Nome: <input name="nome" type="text" maxlength="100"></p>
-						<p>CPF: <input name="cpf" type="number"maxlength="11" placeholder="Somente números" readonly>
+						<p>CPF: <input name="cpf" type="text" minlength="11" maxlength="11" placeholder="Somente números">
 						</p>
-						<p>Telefone: <input name="telefone" type="number" maxlength="11" placeholder="DDD + fone"></p>
+						<p>Telefone: <input name="telefone" type="number" placeholder="DDD + fone"></p>
 
 						<p>Crie sua Senha: <input name="senha" type="password" minlength="6" maxlength="50"
 								placeholder="Mínimo 6 caracteres"></p>
 						<p>Confirme a Senha: <input name="confSenha" type="password" minlength="6" maxlength="50"
-							placeholder="Repita a senha"></p>
+								placeholder="Repita a senha"></p>
 
 						<p>Rua: <input name="rua" type="text" maxlength="50"></p>
 
-						<p>Nº: <input name="numero" id="numero" type="number" maxlength="6">
-							CEP: <input name="cep" id="cep" type="text" maxlength="9" placeholder="Somente nº"></p>
+						<p>
+							Nº: <input name="numero" id="numero" type="number">
+							CEP: <input name="cep" id="cep" type="text" maxlength="9" placeholder="Somente nº">
+						</p>
 
 						<p>Cidade: <input name="cidade" id="cidade" type="text" maxlength="50">
 
